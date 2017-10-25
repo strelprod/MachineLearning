@@ -61,8 +61,14 @@ class LinearRegression {
     }
     
     public function prediction($arrayValues, $theta = null, $sigma = null, $avg = null){
+		$numberOfFeatures = count($arrayValues);
+		if ($numberOfFeatures != count($avg))
+				throw new RuntimeException('Incorrect values for prediction');
+		$predictionValue = $theta[0][0];
+		
 		if (isset($numberOfFeatures) && isset($theta) && isset($sigma) && isset($avg)){
-			$numberOfFeatures = count($arrayValues);
+			
+			
 			$predictionValue = $theta[0][0];
 			for ($j = 0; $j < $numberOfFeatures; $j++)
 				 $predictionValue += ($theta[$j + 1][0] * (($arrayValues[$j] 
@@ -74,7 +80,7 @@ class LinearRegression {
 			$theta = $this->theta;
 			$sigma = $this->trainingData->getSigma();
 			$avg = $this->trainingData->getAvg();
-			$predictionValue = $theta[0][0];
+			
 			for ($i = 1, $j = 0; $i < $numberOfFeatures - 1; $i++, $j++)
 				 $predictionValue += ($theta[$i][0] * (($arrayValues[$j] 
 					- $avg[$i]) / $sigma[$i]));
