@@ -28,3 +28,6 @@ This method returns:
 ```
 $predictionValue = $linearRegression->prediction($valuesForPrediction);
 ```
+
+This method returns:
+* Scalar value of the hypothesis function
