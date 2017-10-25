@@ -12,7 +12,7 @@ x1,x2,y
 
 Where x1, x2, ..., xn - input variables and y is output or target variable
 
-*You can download **data.txt** from **/example** folder to see how it look like*
+*You can download [**data.txt**](https://github.com/strelprod/MachineLearning/blob/master/example/data.txt) from **/example** folder to see how it look like*
 
 2. It is neccessary to upload the file using class **FileUpload** or if you have a url on your file, go to the next step
 ```
