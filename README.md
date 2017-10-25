@@ -7,11 +7,15 @@ Required parameter - the array of the training set.
 
 Optional parameters - alpha and the number of iteration. (By default: alpha = 0.1, number of iterations = 100)
 
-```$linearRegression = new LinearRegression($TrainingDataArray);```
+```
+$linearRegression = new LinearRegression($TrainingDataArray);
+```
 
 2. Secondly you should to call the ```getTrainingDataArray()``` method to compute theta
 
-```$gradient = $linearRegression->gradientDescent();```
+```
+$gradient = $linearRegression->gradientDescent();
+```
 
 This method returns:
 * Array of **Cost function history** (its uses to find optimal number of iterations and alpha parameter)
@@ -21,4 +25,6 @@ This method returns:
 
 3. Using computed parameter **theta** we can predict values uses ```prediction()``` method
 
-```$predictionValue = $linearRegression->prediction($valuesForPrediction);```
+```
+$predictionValue = $linearRegression->prediction($valuesForPrediction);
+```
