@@ -10,7 +10,7 @@ x1,x2,y
 
 *If values are float type then: 1.23,4.35,5*
 
-Where x1, x2, ..., xn - input variables and y is output or target variabl
+Where x1, x2, ..., xn - input variables and y is output or target variable
 
 *You can download **data.txt** from **/example** folder to see how it look like*
 
