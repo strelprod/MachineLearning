@@ -24,7 +24,7 @@ $fileParser = new FileParser($fileUpload->getFileURL());
 ```
 
 This method returns:
-* Array of input variables and output variabl
+* Array of input variables and output variable
 ***
 ## Linear Regression
 
