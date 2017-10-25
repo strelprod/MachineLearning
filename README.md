@@ -37,7 +37,7 @@ Required parameter - the array of the training set.
 Optional parameters - alpha and the number of iteration. (By default: alpha = 0.1, number of iterations = 100)
 
 ```
-$linearRegression = new LinearRegression($TrainingDataArray);
+$linearRegression = new LinearRegression($fileParser->getTrainingDataArray());
 ```
 
 Constructor uses **TrainingDataLinearRegression** class to convert training data to desired data (adding x0 = 1 and mean normalization)
