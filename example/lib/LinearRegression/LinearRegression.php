@@ -19,6 +19,8 @@ class LinearRegression {
             $this->alpha = $alpha;
         if (isset($iterations))
             $this->iterations = $iterations;
+		
+		$this->gradientDescent();
     }
     
     protected function hypothesysFunction ($trainingDataNumber){
@@ -38,7 +40,7 @@ class LinearRegression {
         return $J;
     }
     
-    public function gradientDescent (){
+    protected function gradientDescent (){
         $J_history = array();
         $currentSum = array();
         $hypotesys = 0;
@@ -60,31 +62,18 @@ class LinearRegression {
         return [$J_history, $this->theta];
     }
     
-    public function prediction($arrayValues, $theta = null, $sigma = null, $avg = null){
+    public function prediction($arrayValues){
 		$numberOfFeatures = count($arrayValues);
 		if ($numberOfFeatures != count($avg))
 				throw new RuntimeException('Incorrect values for prediction');
 		$predictionValue = $theta[0][0];
-		
-		if (isset($numberOfFeatures) && isset($theta) && isset($sigma) && isset($avg)){
-			
-			
-			$predictionValue = $theta[0][0];
-			for ($j = 0; $j < $numberOfFeatures; $j++)
-				 $predictionValue += ($theta[$j + 1][0] * (($arrayValues[$j] 
-					- $avg[$j + 1]) / $sigma[$j + 1]));
-			return $predictionValue;
-		}
-		else {
-			$numberOfFeatures = $this->trainingData->getNumberOfFeatures();
-			$theta = $this->theta;
-			$sigma = $this->trainingData->getSigma();
-			$avg = $this->trainingData->getAvg();
-			
-			for ($i = 1, $j = 0; $i < $numberOfFeatures - 1; $i++, $j++)
-				 $predictionValue += ($theta[$i][0] * (($arrayValues[$j] 
-					- $avg[$i]) / $sigma[$i]));
-			return $predictionValue;
-		}
+		$numberOfFeatures = $this->trainingData->getNumberOfFeatures();
+		$theta = $this->theta;
+		$sigma = $this->trainingData->getSigma();
+		$avg = $this->trainingData->getAvg();	
+		for ($i = 1, $j = 0; $i < $numberOfFeatures - 1; $i++, $j++)
+			 $predictionValue += ($theta[$i][0] * (($arrayValues[$j] 
+				- $avg[$i]) / $sigma[$i]));
+		return $predictionValue;
     }
 }
