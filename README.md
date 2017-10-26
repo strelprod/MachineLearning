@@ -25,7 +25,7 @@ $fileParser = new FileParser($fileUpload->getFileURL());
 
 This method returns:
 * Array of input variables and output variable
-***
+
 ## Linear Regression
 
 It is working without regoualization and automatically alpha choosing. So you need to input your values (alpha and number of iterations) or to use default values.
@@ -65,5 +65,5 @@ This method returns:
 * Scalar value of the hypothesis function
 
 4. You can run **index.php** from **/example** folder to see how it work on practice
-***
+
 ## Logistic Regression
