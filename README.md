@@ -14,7 +14,7 @@ Where x1, x2, ..., xn - input variables and y is output or target variable
 
 *You can download [**data.txt**](https://github.com/strelprod/MachineLearning/blob/master/example/data.txt) from **/example** folder to see how it lookd like*
 
-2. It is neccessary to upload (POST-request) the file using class **FileUpload**. *If you know full path (file already has been uploaded), go to the next step*
+2. It is neccessary to upload (POST-request) the file using class **FileUpload**. *If you know full path (file has already been uploaded), go to the next step*
 ```
 $fileUpload = new FileUpload();
 ```
@@ -26,7 +26,7 @@ $fileParser = new FileParser($fileUpload->getFileURL());
 This method returns:
 * Array of input variables and output variable
 
-## Linear Regression
+## Multivariate Linear Regression
 
 It works without regoualization and automatically alpha choosing. So you need to input your values (alpha and number of iterations) or to use default values.
 
